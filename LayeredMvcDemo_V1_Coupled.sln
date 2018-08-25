@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayeredMvcDemo_V1_Coupled",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayeredMvcDemo.Domain", "LayeredMvcDemo.Domain\LayeredMvcDemo.Domain.csproj", "{1E156738-5811-4707-A1CC-49B3DA141FF3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayeredMvcDemo.DataAccess", "LayeredMvcDemo.DataAccess\LayeredMvcDemo.DataAccess.csproj", "{59E0DB40-1F06-4853-9C64-3A87D3CEC1E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1E156738-5811-4707-A1CC-49B3DA141FF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E156738-5811-4707-A1CC-49B3DA141FF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E156738-5811-4707-A1CC-49B3DA141FF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59E0DB40-1F06-4853-9C64-3A87D3CEC1E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59E0DB40-1F06-4853-9C64-3A87D3CEC1E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59E0DB40-1F06-4853-9C64-3A87D3CEC1E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59E0DB40-1F06-4853-9C64-3A87D3CEC1E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
