@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayeredMvcDemo_V1_Coupled", "LayeredMvcDemo_V1_Coupled\LayeredMvcDemo_V1_Coupled.csproj", "{F9E1D92B-A383-4B91-9109-5D3EC7C33756}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayeredMvcDemo.Domain", "LayeredMvcDemo.Domain\LayeredMvcDemo.Domain.csproj", "{1E156738-5811-4707-A1CC-49B3DA141FF3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F9E1D92B-A383-4B91-9109-5D3EC7C33756}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9E1D92B-A383-4B91-9109-5D3EC7C33756}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9E1D92B-A383-4B91-9109-5D3EC7C33756}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E156738-5811-4707-A1CC-49B3DA141FF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E156738-5811-4707-A1CC-49B3DA141FF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E156738-5811-4707-A1CC-49B3DA141FF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E156738-5811-4707-A1CC-49B3DA141FF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
