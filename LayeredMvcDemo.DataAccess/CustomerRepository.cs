@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LayeredMvcDemo.DataAccess.Interfaces;
 using LayeredMvcDemo.Domain.Models;
 
 namespace LayeredMvcDemo.DataAccess
 {
-    public class CustomerRepository
+    public class CustomerRepository : ICustomerRepository
     {
         private SouthwindContext db = new SouthwindContext();
 
