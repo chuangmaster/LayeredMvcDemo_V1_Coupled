@@ -149,6 +149,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MyControllerFactory.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -213,6 +214,10 @@
     <ProjectReference Include="..\LayeredMvcDemo.Application\LayeredMvcDemo.Application.csproj">
       <Project>{10F2182A-071B-4600-A957-20EC1C521A0D}</Project>
       <Name>LayeredMvcDemo.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LayeredMvcDemo.DataAccess\LayeredMvcDemo.DataAccess.csproj">
+      <Project>{59E0DB40-1F06-4853-9C64-3A87D3CEC1E0}</Project>
+      <Name>LayeredMvcDemo.DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\LayeredMvcDemo.Domain\LayeredMvcDemo.Domain.csproj">
       <Project>{1E156738-5811-4707-A1CC-49B3DA141FF3}</Project>

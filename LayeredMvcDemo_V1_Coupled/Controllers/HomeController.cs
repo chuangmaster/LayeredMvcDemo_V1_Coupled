@@ -1,4 +1,5 @@
 ﻿using LayeredMvcDemo.Application;
+using LayeredMvcDemo.Application.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,12 @@ namespace LayeredMvcDemo_V1_Coupled.Controllers
 {
     public class HomeController : Controller
     {
-        private CustomerService customerService = new CustomerService();
+        private ICustomerService customerService;
+        public HomeController(ICustomerService customerService)
+        {
+            this.customerService = customerService;
+        }
+
         public ActionResult Index()
         {
             var customers = customerService.GetCustomerList(cust => cust.Id < 4);
