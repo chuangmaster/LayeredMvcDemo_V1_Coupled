@@ -16,8 +16,7 @@ namespace LayeredMvcDemo_V1_Coupled.Controllers
             if (controllerName == "Home")
             {
                 //建立相依物件，並注入HomeController
-                var repository = new CustomerRepository();
-                var service = new CustomerService(repository);
+                var service = new CustomerService();
                 return new HomeController(service);
             }
             //若其他不須處理，就仰賴預設的ControllerFatory

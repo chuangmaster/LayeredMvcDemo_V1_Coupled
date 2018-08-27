@@ -12,18 +12,25 @@ namespace LayeredMvcDemo.Application
 {
     public class CustomerService : ICustomerService
     {
-        private readonly ICustomerRepository repository = new CustomerRepository();
-        public CustomerService(ICustomerRepository repository)
+        private readonly SouthwindContext db;
+
+        public CustomerService()
         {
-            this.repository = repository;
+            //預設
+            db = new SouthwindContext();
+        }
+        public CustomerService(SouthwindContext context)
+        {
+            //如果外部有提供
+            db = context;
         }
         public Customer GetCustomerById(int id)
         {
-            return repository.GetCustomerById(id);
+            return db.Customers.Find(id);
         }
         public List<Customer> GetCustomerList(Func<Customer, bool> filter)
         {
-            return repository.GetCustomerList(filter).ToList();
+            return db.Customers.Where(filter).ToList();
         }
     }
 }
