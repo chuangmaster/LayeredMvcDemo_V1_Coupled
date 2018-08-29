@@ -1,5 +1,6 @@
 ﻿using LayeredMvcDemo.DataAccess;
 using LayeredMvcDemo_V1_Coupled.Controllers;
+using LayeredMvcDemo_V1_Coupled.Resolver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,8 +21,12 @@ namespace LayeredMvcDemo_V1_Coupled
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             // 換掉預設的Controller Factory
             // SetControllerFactory ⽅法就是 DI 注⼊模式中的「屬性注⼊」（Property Injection）。
-            IControllerFactory controllerFactory = new MyControllerFactory();
-            ControllerBuilder.Current.SetControllerFactory(controllerFactory);
+            //IControllerFactory controllerFactory = new MyControllerFactory();
+            //ControllerBuilder.Current.SetControllerFactory(controllerFactory);
+
+            // 設定 MVC 應⽤程式的全域 dependency resolver 物件。
+            IDependencyResolver resolver = new MyDependencyResolver();
+            DependencyResolver.SetResolver(resolver);
 
         }
 
