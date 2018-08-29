@@ -17,7 +17,7 @@ namespace LayeredMvcDemo.Application
         public CustomerService()
         {
             //預設
-            db = new SouthwindContext();
+            db = SouthwindContext.InstanceInCurrentRequest;
         }
         public CustomerService(SouthwindContext context)
         {
