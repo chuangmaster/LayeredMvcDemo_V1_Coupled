@@ -5,11 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Unity;
 
 namespace LayeredMvcDemo_V1_Coupled.Resolver
 {
     public class MyDependencyResolver : IDependencyResolver
     {
+        private IUnityContainer _container;
         public object GetService(Type serviceType)
         {
             // 觀察 MVC 框架有哪些服務會透過 dependency resolver 來解析。

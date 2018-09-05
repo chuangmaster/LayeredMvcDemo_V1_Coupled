@@ -1,5 +1,10 @@
+using LayeredMvcDemo.Application;
+using LayeredMvcDemo.Application.Interfaces;
+using LayeredMvcDemo_V1_Coupled.Controllers.API;
+using LayeredMvcDemo_V1_Coupled.Resolver.API;
 using System.Web.Http;
-
+using System.Web.Http.Dispatcher;
+using Unity;
 using Unity.AspNet.WebApi;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(LayeredMvcDemo_V1_Coupled.UnityWebApiActivator), nameof(LayeredMvcDemo_V1_Coupled.UnityWebApiActivator.Start))]
@@ -15,7 +20,7 @@ namespace LayeredMvcDemo_V1_Coupled
         /// <summary>
         /// Integrates Unity when the application starts.
         /// </summary>
-        public static void Start() 
+        public static void Start()
         {
             // Use UnityHierarchicalDependencyResolver if you want to use
             // a new child container for each IHttpController resolution.
@@ -25,6 +30,16 @@ namespace LayeredMvcDemo_V1_Coupled
             GlobalConfiguration.Configuration.DependencyResolver = resolver;
         }
 
+        public static void Register(HttpConfiguration config)
+        {
+
+            var container = new UnityContainer();
+            container.RegisterType<CustomerController>();
+            container.RegisterType<ICustomerService, CustomerService>();
+            var myControllerActovator = new MyHttpControllerActivator(container);
+            config.Services.Replace(typeof(IHttpControllerActivator),
+            myControllerActovator);
+        }
         /// <summary>
         /// Disposes the Unity container when the application is shut down.
         /// </summary>
