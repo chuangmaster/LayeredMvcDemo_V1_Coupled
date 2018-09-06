@@ -1,16 +1,17 @@
 ﻿using LayeredMvcDemo.DataAccess;
 using LayeredMvcDemo_V1_Coupled.Controllers;
+using LayeredMvcDemo_V1_Coupled.Controllers.API;
 using LayeredMvcDemo_V1_Coupled.Resolver;
 using LayeredMvcDemo_V1_Coupled.Resolver.API;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Http;
-using System.Web.Http.Dispatcher;
+using System.Web.Http; 
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Unity;
 
 namespace LayeredMvcDemo_V1_Coupled
 {
@@ -32,10 +33,6 @@ namespace LayeredMvcDemo_V1_Coupled
             // 設定 MVC 應⽤程式的全域 dependency resolver 物件。
             IDependencyResolver resolver = new MyDependencyResolver();
             DependencyResolver.SetResolver(resolver);
-
-            IHttpControllerActivator controllerActivator = new MyHttpControllerActivator();
-            GlobalConfiguration.Configuration.Services.Replace(typeof(IHttpControllerActivator), controllerActivator);
-
         }
 
         protected void Application_BeginRequest()

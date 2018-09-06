@@ -21,6 +21,7 @@ namespace LayeredMvcDemo_V1_Coupled.Resolver.API
         }
         public IHttpController Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)
         {
+            //不透過DI，根據controllerType來產生實體
             //if (controllerType == typeof(CustomerController))
             //{
             //    ICustomerService customerSercie = new CustomerService();// 建⽴相依物件
