@@ -163,6 +163,7 @@
     <Compile Include="Controllers\API\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MyControllerFactory.cs" />
+    <Compile Include="Resolver\API\MyAPIDependencyResolver.cs" />
     <Compile Include="Resolver\API\MyHttpControllerActivator.cs" />
     <Compile Include="Resolver\MyDependencyResolver.cs" />
     <Compile Include="Global.asax.cs">
