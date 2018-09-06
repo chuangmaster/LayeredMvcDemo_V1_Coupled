@@ -10,6 +10,10 @@ namespace LayeredMvcDemo_V1_Coupled.Resolver.API
 {
     public class MyAPIDependencyResolver : IDependencyResolver
     {
+        public MyAPIDependencyResolver(IUnityContainer )
+        {
+
+        }
         public IDependencyScope BeginScope()
         {
             return this;
