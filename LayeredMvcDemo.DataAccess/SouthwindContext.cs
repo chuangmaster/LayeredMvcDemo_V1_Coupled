@@ -16,6 +16,11 @@ namespace LayeredMvcDemo.DataAccess
             Database.SetInitializer<SouthwindContext>(new SouthwindDBInitializer());
         }
 
+        public SouthwindContext(string connStr) : base(connStr)
+        {
+            Database.SetInitializer<SouthwindContext>(new SouthwindDBInitializer());
+        }
+
         public static SouthwindContext InstanceInCurrentRequest
         {
             get

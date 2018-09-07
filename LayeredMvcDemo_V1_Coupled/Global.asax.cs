@@ -4,6 +4,7 @@ using LayeredMvcDemo_V1_Coupled.Resolver;
 using LayeredMvcDemo_V1_Coupled.Resolver.API;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -23,7 +24,7 @@ namespace LayeredMvcDemo_V1_Coupled
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            
+
             // 換掉預設的Controller Factory
             // SetControllerFactory ⽅法就是 DI 注⼊模式中的「屬性注⼊」（Property Injection）。
             //IControllerFactory controllerFactory = new MyControllerFactory();
@@ -40,7 +41,8 @@ namespace LayeredMvcDemo_V1_Coupled
 
         protected void Application_BeginRequest()
         {
-            HttpContext.Current.Items["DbContext"] = new SouthwindContext();
+            var connStr = ConfigurationManager.ConnectionStrings["connStr"].ToString();
+            HttpContext.Current.Items["DbContext"] = new SouthwindContext(connStr);
         }
 
         protected void Application_EndRequest()
