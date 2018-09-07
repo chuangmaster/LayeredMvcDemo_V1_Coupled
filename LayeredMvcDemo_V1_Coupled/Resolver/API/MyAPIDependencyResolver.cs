@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http.Dependencies;
+using Unity;
 
 namespace LayeredMvcDemo_V1_Coupled.Resolver.API
 {
     public class MyAPIDependencyResolver : IDependencyResolver
     {
-        public MyAPIDependencyResolver(IUnityContainer )
+        IUnityContainer _container;
+        public MyAPIDependencyResolver(IUnityContainer container)
         {
-
+            _container = container;
         }
         public IDependencyScope BeginScope()
         {
@@ -30,7 +32,7 @@ namespace LayeredMvcDemo_V1_Coupled.Resolver.API
 
             if (typeof(CustomerController) == serviceType)
             {
-                var service = new CustomerService();
+                var service = _container.Resolve<CustomerService>();
                 return new CustomerController(service);
             }
             return null;

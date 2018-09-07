@@ -1,9 +1,12 @@
-﻿using LayeredMvcDemo_V1_Coupled.Resolver.API;
+﻿using LayeredMvcDemo.Application;
+using LayeredMvcDemo.Application.Interfaces;
+using LayeredMvcDemo_V1_Coupled.Resolver.API;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Dependencies;
+using Unity;
 
 namespace LayeredMvcDemo_V1_Coupled
 {
@@ -18,7 +21,9 @@ namespace LayeredMvcDemo_V1_Coupled
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-            config.DependencyResolver = new MyAPIDependencyResolver();
+            var container = new UnityContainer();
+            container.RegisterType<ICustomerService, CustomerService>();
+            config.DependencyResolver = new MyAPIDependencyResolver(container);
         }
     }
 }
